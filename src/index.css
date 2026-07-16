@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-primary: #0A2540;
+  --color-brand-secondary: #2563EB;
+  --color-brand-accent: #14B8A6;
+  --color-brand-gold: #F5B301;
+}
+
+/* Custom transitions and scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Glassmorphism utility */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-effect {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ================= ENCHANTED MAGIC MODE ================= */
+.magic-mode {
+  --color-brand-secondary: #8B5CF6; /* Magical Purple override */
+  --color-brand-accent: #EC4899;    /* Magical Pink override */
+  background: radial-gradient(circle at 50% 50%, #0c0824 0%, #030010 100%) !important;
+  color: #f1f5f9 !important;
+}
+
+.magic-mode .bg-white {
+  background-color: rgba(13, 8, 38, 0.75) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+  color: #f8fafc !important;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.magic-mode .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+.magic-mode .text-slate-600,
+.magic-mode .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+.magic-mode .border-slate-100,
+.magic-mode .border-slate-150,
+.magic-mode .border-slate-200 {
+  border-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* Neon Glow utilities */
+.glow-purple {
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.6), 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.glow-gold {
+  text-shadow: 0 0 8px rgba(245, 179, 1, 0.6), 0 0 15px rgba(245, 179, 1, 0.3);
+}
+
+.border-glow-purple:hover {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  border-color: rgba(139, 92, 246, 0.6) !important;
+}
+
+.border-glow-gold:hover {
+  box-shadow: 0 0 15px rgba(245, 179, 1, 0.4);
+  border-color: rgba(245, 179, 1, 0.6) !important;
+}
+
+/* Rotating stardust aura */
+@keyframes magical-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.magical-spin-slow {
+  animation: magical-spin 60s linear infinite;
+}
+
+@keyframes magical-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+.magical-float {
+  animation: magical-float 6s ease-in-out infinite;
+}
+
+.magical-pulse-glow {
+  animation: magical-pulse 3s ease-in-out infinite;
+}
+
+@keyframes magical-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.98); filter: blur(4px); }
+  50% { opacity: 0.7; transform: scale(1.02); filter: blur(1px); }
+}
+
